@@ -1,20 +1,28 @@
-import React from "react";
-import{Layout}from "antd";
+import React, { useState } from "react";
+import { Layout } from "antd";
 import MenuTop from "../components/AdminComponents/MenuTop";
+import Menusider from "../components/AdminComponents/MenuSider";
 import "./LayoutAdmin.scss";
-export default function LayoutAdmin(props){
-    const{children}=props; 
-    /* Especificas Los componentes que quieres obtener de este Layout */
-    const{Header, Content, Footer}=Layout;
+
+export default function LayoutAdmin(){
+    const [menuCollapsed, setMenuCollapsed] = useState(false);
+    const {Header, Content, Footer} = Layout;
+
     return(
         <Layout>
-        <Layout className="layout-admin">
-            <Header clossName="layout-admin_header">
-            <MenuTop></MenuTop>
-            </Header>
-            <Content className="layout-admin_content">{children}</Content>
-            <Footer className="layout-admin_footer">React Project 2022</Footer>
-        </Layout>
+            <Menusider menuCollapsed={menuCollapsed} />
+            <Layout className="layout-admin">
+                <Header className="layout-admin_header">
+                    <MenuTop
+                        menuCollapsed={menuCollapsed}
+                        setMenuCollapsed = {setMenuCollapsed}
+                    />
+                </Header>
+                <Content className="layout-admin_content">
+                    <h1>Rutas</h1>
+                </Content>
+                <Footer className="layout-admin__footer">MERN React</Footer>
+            </Layout>
         </Layout>
     );
 }
