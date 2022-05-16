@@ -1,26 +1,24 @@
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import miroutes from "./config/routes";
 import "./App.scss";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import routes from "./config/routes";
 
-function App() {
+export default function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
-        {routes.map((route, index) => (
+        {miroutes.map((route, index) => (
           <Route
             key={index}
             path={route.path}
             element={
               <route.layout>
-                <route.component></route.component>
-                <h2>Child Component</h2>
+                <route.component />
               </route.layout>
             }
           />
         ))}
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 }
-
-export default App;
