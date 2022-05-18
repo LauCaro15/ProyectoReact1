@@ -14,12 +14,12 @@ export default function Register(){
     const changeForm = (event) => {
         if(event.target.name === "privacyPolicy"){
             setInputs({
-                ... inputs,
+                ...inputs,
                 [event.target.name]: event.target.checked,
             });
         }else{
             setInputs({
-                ... inputs,
+                ...inputs,
                 [event.target.name]:event.target.value,
             });
         }
