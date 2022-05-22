@@ -27,7 +27,8 @@ export default function LayoutBasic(props) {
         </Header>
         <Content className="layout-admin__content">{children}</Content>
         <Footer className="layout-admin__footer">
-          <GithubOutlined style={{ fontSize: '17px' }} /> LauCaro15</Footer>
+          <GithubOutlined style={{ fontSize: "17px" }} /> <a href="https://github.com/LauCaro15">LauCaro15</a>
+        </Footer>
       </Layout>
     </Layout>
   );
