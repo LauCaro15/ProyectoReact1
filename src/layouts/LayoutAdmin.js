@@ -11,7 +11,7 @@ export default function LayoutAdmin(props){
   const [menuCollapsed, setMenuCollapsed] = useState(false);
   const { Header, Content, Footer } = Layout;
   const { children }=props;
-  const user = null;
+  const user = localStorage.getItem("user_id");;
  /*const Location-useLocation();*/
   if(!user){
     return(

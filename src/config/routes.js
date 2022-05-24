@@ -3,13 +3,13 @@ import LayoutBasic from "../layouts/LayoutBasic";
 /* Importamos los pages */
 import AdminHome from "../pages/Admin";
 import AdminSignIn from "../pages/Admin/SignIn";
-import Home from "../pages/home";
+import Home from "../pages/Home";
 import NotFound from "../pages/NotFound/NotFound";
-import Contact from "../pages/contact";
+import Contact from "../pages/Contact";
 
 const routesAdmin = [
   {
-    path: "/admin",
+    path: "/admin/*",
     layout: LayoutAdmin,
     component: AdminHome,
   },
