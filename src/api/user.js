@@ -17,7 +17,7 @@ export function signUpApi(data) {
 }
 
 export function logInApi(data) {
-  const url = `${basePath}/${apiVersion}/signup/`
+  const url = `${basePath}/${apiVersion}/login/`
   const params = {
     method: "POST",
     body: JSON.stringify(data),
@@ -26,7 +26,7 @@ export function logInApi(data) {
     }
   }
 
-  return fetch(url + 'login', params).then((response) => {
+  return fetch(url, params).then((response) => {
     return response.json()
   })
 }
